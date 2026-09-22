@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070709">
+  <meta name="description" content="An immersive fan countdown to Grand Theft Auto VI. Explore the light, the nights, and the wait for November 19, 2026.">
+  <title>GTA VI — Worth the wait.</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070709'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='23' fill='%23ffb4cd'%3EVI%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/barlow-condensed-800.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#countdown">Skip to countdown</a>
+  <header class="site-header">
+    <a class="brand" href="#overview" aria-label="GTA VI overview"><span class="brand-vi">VI</span><span class="brand-name"><span class="brand-long">Grand Theft Auto VI</span><span class="brand-short">GTA VI</span></span></a>
+    <nav aria-label="Main navigation"><a class="nav-overview" href="#overview">Overview</a><a href="#experience">Experience</a><a class="nav-countdown" href="#countdown">The countdown <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <div class="scroll-progress" aria-hidden="true"><span id="page-progress"></span></div>
+  <main>
+    <section class="hero scroll-track" id="overview" aria-labelledby="headline">
+      <div class="hero-stage sticky-stage">
+        <div class="hero-landscape" aria-hidden="true"><img src="assets/vice-city.jpg" alt="" width="1920" height="1080" fetchpriority="high"><div class="landscape-shade"></div></div>
+        <div class="hero-content">
+          <p class="eyebrow">GRAND THEFT AUTO VI</p>
+          <h1 id="headline">Worth the wait.</h1>
+          <div class="emblem-wrap" id="emblem-wrap" aria-hidden="true"><div class="emblem-fallback">VI</div><canvas id="emblem"></canvas><div class="emblem-floor"></div></div>
+          <p class="hero-date">November 19, 2026.</p>
+          <p class="mini-countdown" role="timer" aria-label="Time until the scheduled release date" aria-live="off"><span data-mini="days">—</span>d <i>:</i> <span data-mini="hours">—</span>h <i>:</i> <span data-mini="minutes">—</span>m <i>:</i> <span data-mini="seconds">—</span>s</p>
+        </div>
+        <div class="hero-arrival" aria-hidden="true"><span class="eyebrow">NEXT STOP. LEONIDA.</span><p>Welcome<br><em>back.</em></p></div>
+        <div class="hero-bottom"><span class="fan-label">AN UNOFFICIAL FAN EXPERIENCE</span><a class="scroll-cue" href="#experience"><span>Scroll to explore</span><span class="cue-circle" aria-hidden="true">↓</span></a><span class="edition-label">VICE CITY / 2026</span></div>
+      </div>
+    </section>
+    <section class="world-intro" aria-labelledby="world-title"><p class="eyebrow reveal">SOME PLACES STAY WITH YOU.</p><h2 class="reveal" id="world-title">The light.<br>The nights.<br><span>The possibility.</span></h2><p class="intro-copy reveal">From the blue of the Keys to the glow of Vice City.<br>A little paradise. A different kind of escape.</p></section>
+    <section class="experience scroll-track" id="experience" aria-labelledby="experience-title">
+      <div class="experience-stage sticky-stage">
+        <div class="experience-heading"><p class="eyebrow">POSTCARDS FROM LEONIDA</p><h2 id="experience-title">Wish you were <em>here.</em></h2></div>
+        <div class="card-space" id="card-space">
+          <button class="scene-card" data-scene="0" type="button" aria-label="Explore daylight in the Leonida Keys" aria-pressed="false"><img src="assets/leonida-keys.jpg" alt="A seaplane over turquoise water in the Leonida Keys" width="1920" height="1080" loading="lazy"><span class="card-shade"></span><span class="card-caption"><span>01 / LEONIDA KEYS</span><strong>Out of the blue.</strong></span></button>
+          <button class="scene-card is-selected" data-scene="1" type="button" aria-label="Explore golden hour in Vice City" aria-pressed="true"><img src="assets/vice-city.jpg" alt="Golden light over Vice City's waterfront skyline" width="1920" height="1080" loading="lazy"><span class="card-shade"></span><span class="card-caption"><span>02 / VICE CITY</span><strong>Chase the sunset.</strong></span></button>
+          <button class="scene-card" data-scene="2" type="button" aria-label="Explore Vice City after dark" aria-pressed="false"><img src="assets/vice-city-night.jpg" alt="Neon lights and the Ferris wheel along Vice City's evening waterfront" width="3840" height="2160" loading="lazy"><span class="card-shade"></span><span class="card-caption"><span>03 / VICE CITY</span><strong>Stay for the night.</strong></span></button>
+        </div>
+        <div class="scene-selector" role="group" aria-label="Choose a scene"><button type="button" data-select="0" aria-pressed="false">Daylight</button><button type="button" data-select="1" aria-pressed="true">Golden hour</button><button type="button" data-select="2" aria-pressed="false">After dark</button></div>
+        <p class="scene-status sr-only" aria-live="polite" id="scene-status">Golden hour selected.</p>
+      </div>
+    </section>
+    <section class="countdown-section" id="countdown" aria-labelledby="countdown-title">
+      <div class="countdown-glow" aria-hidden="true"></div>
+      <p class="eyebrow reveal">EVERY SECOND. A LITTLE CLOSER.</p>
+      <h2 class="reveal" id="countdown-title">Your next chapter.<br><span>Starts here.</span></h2>
+      <p class="countdown-heading" id="countdown-heading">UNTIL GRAND THEFT AUTO VI</p>
+      <div class="countdown" role="timer" aria-labelledby="countdown-heading" aria-live="off">
+        <div class="time-unit"><span class="number" id="days">—</span><span class="unit">Days</span></div><span class="separator" aria-hidden="true">:</span>
+        <div class="time-unit"><span class="number" id="hours">—</span><span class="unit">Hours</span></div><span class="separator" aria-hidden="true">:</span>
+        <div class="time-unit"><span class="number" id="minutes">—</span><span class="unit">Minutes</span></div><span class="separator" aria-hidden="true">:</span>
+        <div class="time-unit seconds"><span class="number" id="seconds">—</span><span class="unit">Seconds</span></div>
+      </div>
+      <p class="release-date"><time datetime="2026-11-19">November 19, 2026.</time></p>
+      <p class="platforms">PlayStation 5 <span aria-hidden="true">·</span> Xbox Series X|S</p>
+      <a class="official-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Explore GTA VI <span aria-hidden="true">↗</span><span class="sr-only"> on the official site (opens in a new tab)</span></a>
+      <p class="timing-note" id="timing-note">Counting to local midnight. Actual unlock times may vary.</p>
+      <noscript><p class="timing-note">Enable JavaScript to see the live countdown.</p></noscript>
+    </section>
+  </main>
+  <footer><a class="footer-brand" href="#overview">VI <span>Made for the wait.</span></a><p>Unofficial fan site. Not affiliated with Rockstar Games.<br>Imagery © Rockstar Games. Trademarks belong to Take-Two Interactive.</p><a href="https://store.rockstargames.com/game/buy-gta-vi" target="_blank" rel="noopener noreferrer">Release date source ↗<span class="sr-only"> (opens in a new tab)</span></a></footer>
+  <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" hidden><span class="motion-icon" aria-hidden="true">Ⅱ</span><span id="motion-label">Pause motion</span></button>
+</body>
+</html>
